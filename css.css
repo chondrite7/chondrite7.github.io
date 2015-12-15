@@ -1,0 +1,166 @@
+body { 
+  background-image: url(./img/greyzz.png); 
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+}
+#wrapper {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;left:0;
+    overflow:hidden;
+}
+#mask {
+    width:500%;
+    height:100%;
+}
+.page {
+        width:20%;
+        height:100%;
+        overflow:auto;
+    }
+.content {
+        width:900px;
+        height:300px;
+        top:10%;
+        margin:0 auto;
+        position:relative;
+        
+    }
+    
+ .selected {
+        font-weight:700;
+    }
+.clear {
+        clear:both;
+    }
+h1 {
+  color:#ff5050;
+  font-family:helvetica;
+  font-size:80pt;
+  text-align:left;
+  padding-top:30px;
+ }
+h2{
+  color:#808080;
+  font-family:helvetica;
+  font-size:36pt;
+  font-weight:100;
+  text-align:left;
+  padding:0;
+ } 
+h3{
+  color:#808080;
+  margin:0 auto;
+  font-family:calibri;
+  font-size:16pt;
+  font-weight:100;  
+}
+.navname{
+  padding:15px;
+}
+h4{
+  color:#ff5050;
+  
+  font-family:calibri;
+  font-size:20pt;
+  font-weight:100;
+  text-align: center;
+  margin:auto;
+  margin-top:50px;
+}
+h5{
+  color:#4c4c4c;
+  font-family:calibri;
+  font-size:12pt;
+  font-weight:100;
+  text-align:center;
+ }
+h6{
+  color:#808080;
+  font-family:calibri;
+  font-size:12pt;
+  font-weight:100;
+  text-align:right;
+  margin:0px;
+  padding-right:120px;
+  padding-top:30px;
+ }
+p{
+  color:black;
+  font-family:calibri;
+  font-size:12pt;
+  font-weight:100;
+  
+ }
+.fixed-nav-bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  box-shadow: 0 2px 3px rgba(0,0,0,.2);
+}
+#profile{
+ height:60px;
+ width:60px;
+ padding:10px;
+ padding-left:100px;
+ padding-right:20px;
+}
+.left{
+  float: left;
+  position: relative;
+  width:50%;
+}
+.right{
+  float: right;
+  position: relative;
+}
+
+table{
+  margin:15px auto;
+}
+td{
+  background-color:white;
+}
+
+.project{
+  margin:10px;
+  margin-bottom:0px;
+  border:1px;
+  border-color:white;
+  height:255px;
+  width:360px auto;
+  
+}
+#imgcenter{
+  margin-left: auto;
+  margin-right: auto;
+  display:block;
+}
+#info{
+  margin:0px auto;
+}
+
+
+a:link,a:visited{
+  text-decoration:none;
+  color:#808080;
+ }
+ .navbar{
+  font-weight:200;
+ }
+.navbar:hover{
+  text-decoration:none;  
+  font-weight:400;
+  color:#ff5050;
+ }
+.proname:hover{
+  border: solid #ff8484 1px; 
+  
+ }
