@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Programming | Interactive Games</title>
+    <link rel="stylesheet" type="text/css" href="project.css"/>
+</head>
+
+<body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+ <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+ <script src="http://www.codeskulptor.org/js/jquery.flot.min.js"></script>
+ <script src="http://www.codeskulptor.org/js/jquery.flot.axislabels.min.js"></script>
+ <script src="http://www.codeskulptor.org/js/jquery.flot.orderbars.min.js"></script>
+ <script src="http://www.codeskulptor.org/js/numeric-1.2.6.min.js"></script>
+ <script src="http://www.codeskulptor.org/skulpt/skulpt.min.js"></script>
+ <script src="http://www.codeskulptor.org/skulpt/skulpt-stdlib.js"></script>
+ <script src="http://www.codeskulptor.org/js/codeskulptor-compressed.js"></script>
+ <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script type="text/javascript">
+// output functions are configurable.  This one just appends some text
+// to a pre element.
+function outf(text) {
+   var mypre = document.getElementById("output");
+   mypre.innerHTML = mypre.innerHTML + text;
+}
+function builtinRead(x) {
+   if (Sk.builtinFiles === undefined || Sk.builtinFiles["files"][x] === undefined)
+           throw "File not found: '" + x + "'";
+   return Sk.builtinFiles["files"][x];
+}
+ 
+// Here's everything you need to run a python program in skulpt
+// grab the code from your textarea
+// get a reference to your pre element for output
+// configure the output function
+// call Sk.importMainWithBody()
+function runit() {
+    console.log('hi');
+    $.ajax(
+        "https://raw.githubusercontent.com/chondrite7/Interactive_Game_Programming/master/asteroids.py",
+        {
+            success: function(data)
+            {
+                var mypre = document.getElementById("output");
+                mypre.innerHTML = '';
+                Sk.canvas = "mycanvas";
+                Sk.pre = "output";
+                Sk.configure({output:outf, read:builtinRead});
+                eval(Sk.importMainWithBody("<stdin>",false,data));
+            }
+        }
+    );
+}
+</script>
+    <div id="name"><a name="top"/>
+        <a href="../index.html"><img class="back" src="./img/back.png" align="right"/></a>
+        <img id="logo" src="./img/logo.png" align="left"/>
+        <h1>Asteroids</h1>
+        <h3>Interactive programming in Python</h3>
+    <div/>
+    
+    <div class="container" id="intro">
+        <h2>BACKGROUND</h2>
+        <p>This is a game that I wrote when I took the "Interactive Programming in Python" class on Coursera.</p>  
+    </div>
+    
+    <div class="container">
+            <h4>Play the game!</h4>
+            <hr>
+            <img class="left" src="./img/asteroids.PNG" onclick="runit()">
+            <pre id="output" ></pre>
+            <h2 class="txtright">How to play</h2>
+            <p class="txtright">
+                <br/></br>Use left and right arrow keys to turn around. </br>Use up arrow key to accelerate.</br> Use the space key to file a missle.
+            </p>
+    </div>
+    
+  
+    <div class="back">
+        <a href="../index.html"><img id="back" src="./img/back.png" align="right"/></a>
+    </div>
+    
+
+
+    
+
+</body>
+</html>
